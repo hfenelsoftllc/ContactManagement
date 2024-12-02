@@ -12,7 +12,7 @@
               ItemTapped="listContacts_ItemTapped">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell 
+                <TextCell  
                     Text="{Binding Name}"
                     Detail="{Binding Email}"></TextCell>
             </DataTemplate>

@@ -3,13 +3,110 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Contacts.Maui.Views.EditContactPage"
              Title="EditContact">
-    <VerticalStackLayout>
-        <Label 
-            x:Name="lblName"
-            Text="Editing Contact"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout Padding="5" Spacing="10" Margin="20,10,20,0">
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout>
+                <Label 
+                    x:Name="lblName"
+                    Text="Name"
+                    VerticalOptions="Center" 
+                    WidthRequest="60"
+                />
+                <Entry x:Name="entryName" VerticalOptions="Center" ></Entry>
+            </HorizontalStackLayout>
+        </Frame>
 
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout>
+                <Label 
+                    x:Name="lblAddress"
+                    Text="Address"
+                    VerticalOptions="Center"
+                    WidthRequest="60"
+                />
+                <Entry x:Name="entryAddress" VerticalOptions="Center"></Entry>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout>
+                <Label 
+                    x:Name="lblCity"
+                    Text="City"
+                    VerticalOptions="Center"
+                    WidthRequest="60"
+                />
+                <Entry x:Name="entryCity" VerticalOptions="Center"></Entry>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout>
+                <Label 
+                    x:Name="lblState"
+                    Text="State"
+                    VerticalOptions="Center" 
+                    WidthRequest="60"
+                />
+                <Entry x:Name="entryState" VerticalOptions="Center"></Entry>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout>
+                <Label 
+                    x:Name="lblZip"
+                    Text="ZipCode"
+                    VerticalOptions="Center" 
+                    WidthRequest="60"
+                />
+                <Entry x:Name="entryZip" VerticalOptions="Center"></Entry>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout>
+                <Label 
+                     x:Name="lblCountry"
+                     Text="Country"
+                     VerticalOptions="Center"
+                    WidthRequest="60"
+                />
+                <Entry x:Name="entryCountry" VerticalOptions="Center"></Entry>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout>
+                <Label 
+                     x:Name="lblPhone"
+                     Text="Phone"
+                     VerticalOptions="Center" 
+                    WidthRequest="60"
+                 />
+                <Entry x:Name="entryPhone" VerticalOptions="Center"></Entry>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Padding="10,2,10,2">
+            <HorizontalStackLayout>
+                <Label 
+                    x:Name="lblEmail"
+                    Text="Email"
+                    VerticalOptions="Center" 
+                    WidthRequest="60"
+                />
+                <Entry x:Name="entryEmail" VerticalOptions="Center"></Entry>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Button x:Name="btnUpdate" Text="Update" Clicked="btnUpdate_Clicked"></Button>
         <Button x:Name="btnCancel" Text="Cancel" Clicked="btnCancel_Clicked"></Button>
     </VerticalStackLayout>
+    <!--<StackLayout Orientation="Vertical" Spacing="10">
+        <BoxView Color="Aqua" HeightRequest="50"></BoxView>
+        <BoxView Color="Blue" HeightRequest="50"></BoxView>
+        <BoxView Color="Red" HeightRequest="50"></BoxView>
+        <BoxView Color="Yellow" HeightRequest="50"></BoxView>
+    </StackLayout>-->
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Maui.ApplicationModel.Communication;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,52 @@ namespace Contacts.Maui.Models
         public static List<Contact> GetAllContacts() => _contacts;
 
 
-        public static Contact GetContactById(int contactid) => _contacts.FirstOrDefault(x => x.ContactId == contactid);
+        public static Contact? GetContactById(int contactid)
+        {
+            var contact = _contacts.FirstOrDefault(x => x.ContactId == contactid);
+            if (contact != null)
+            {
+                return new Contact
+                {
+                    Name = contact.Name,
+                    Address = contact.Address,
+                    City = contact.City,
+                    State = contact.State,
+                    ZipCode = contact.ZipCode,
+                    Country = contact.Country,
+                    Phone = contact.Phone,
+                    Email = contact.Email
+                };
+            }
+           
+           return null;
+          
+        }
+
+        public static void UpdateContact(int contactid, Contact contact)
+        {
+            if (contactid != contact.ContactId) return;
+
+            var contactToUpdate = _contacts.FirstOrDefault(x => x.ContactId == contactid);
+            if (contactToUpdate != null)
+            {
+                // AutoMapper
+                contactToUpdate.Name = contact.Name;
+                contactToUpdate.Address = contact.Address;
+                contactToUpdate.City = contact.City;
+                contactToUpdate.State = contact.State;
+                contactToUpdate.ZipCode = contact.ZipCode;
+                contactToUpdate.Country = contact.Country;
+                contactToUpdate.Phone = contact.Phone;
+                contactToUpdate.Email = contact.Email;
+            }
+
+                //var contactToUpdate = GetContactById(contactid);
+
+            //if (contactToUpdate != null)
+            //{
+                
+            //}
+        }
     }
 }
